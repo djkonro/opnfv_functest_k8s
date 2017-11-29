@@ -6,6 +6,6 @@ ENV GOPATH=/home/go
 COPY kubernetes $GOPATH/src/k8s.io/kubernetes
 
 RUN apk --no-cache add --update make bash go \
-        grep gcc rsync linux-headers musl-dev findutils \
+        grep rsync linux-headers musl-dev findutils \
         && cd $GOPATH/src/k8s.io/kubernetes && \
         make WHAT=test/e2e/e2e.test
